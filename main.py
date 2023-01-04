@@ -1,12 +1,11 @@
-from modules import Tree
-from op import save_img, grow
 import argparse
+import modules
 
 
 def argument():
     parser = argparse.ArgumentParser(description="Binary Tree Art")
     parser.add_argument("-num", default=5, type=int)
-    parser.add_argument("-size", default=12, type=int)
+    parser.add_argument("-layer", default=10, type=int)
 
     return parser
 
@@ -14,21 +13,11 @@ def argument():
 if __name__ == "__main__":
     args = argument().parse_args()
 
+    layer = args.layer
+    generator = modules.Tree_Generator()
+    canvas = modules.Tree_Image((2500, 2500), layer)
     for i in range(args.num):
-        tree = Tree()
-        for _ in range(args.size):
-            grow(tree, 18, 0.2, 1)
-            # print(tree)
-
-        save_img(tree, (1250, 2375), 250, 2, f"img/2-{i}.jpg")
-
-# tree = Tree()
-
-# for _ in range(12):
-#     grow(tree, 0, 0, 0)
-#     # print(tree)
-# save_img(tree, (1250, 2375), 250, 2, f"img/ver2/0.jpg")
-
-# for i in range(2, 180, 2):
-#     change_angles(tree, 2, 0)
-#     save_img(tree, (1250, 2375), 250, 2, f"img/ver2/{i}.jpg")
+        node = generator.generate(layer)
+        canvas.draw_node(node, (1250, 2375), 300, 0, 30)
+        canvas.save_image(f"img/{i}.jpg")
+        canvas.clear()
