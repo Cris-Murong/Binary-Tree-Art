@@ -20,14 +20,12 @@ Argparse Option:
 
 
 ## Examples
-<image src="img/readme_img/0.jpg" height = 200>
-<image src="img/readme_img/1.jpg" height = 200>
-<image src="img/readme_img/2.jpg" height = 200>
+<image src="img/readme_img/0.jpg" height = 200> <image src="img/readme_img/1.jpg" height = 200> <image src="img/readme_img/2.jpg" height = 200>
 
 
-## Details 
+## Entities
 
-#### Tree_Node(class)
+#### Tree_Node
 
 Attributes:
 ```py
@@ -75,7 +73,7 @@ print(node)
 |     |     |left: END
 |     |     |right: END
 ```
-#### Exponential()
+#### Exponential
 
 The `Exponential` is used to model the uneven change of color / size / width ...
 $$
@@ -95,7 +93,7 @@ Properties:
 get_y() # return the y of the given `x`
 ```
 
-#### Tree_Generator()
+#### Tree_Generator
 
 The `Tree_Generator` is used to generate a random binary tree.
 
@@ -116,7 +114,7 @@ generate() # return a base `Tree_Node` of a random tree.
 _brunching() # brunching the given `base_node`
 ```
 
-#### Tree_Image()
+#### Tree_Image
 
 Attributes:
 ``` py
