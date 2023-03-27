@@ -1,4 +1,4 @@
-# Binary Tree Art
+# Binary Tree Art 2.0
 
 Generate a .jpg file or a series of .jpg sequences of binary trees.
 
