@@ -40,7 +40,12 @@ def setup_tree(args: argparse.Namespace) -> modules.Tree_Node:
             data = json.load(f)
             tree = modules.Tree_Node.convert_from_list(data)
     else:
-        generator = modules.Tree_Generator()
+        exp = modules.Exp_Func(
+            base=2,
+            y_shift=0.85,
+            y_stretch=(0.6 - 0.85) / (2**10),
+        )
+        generator = modules.Tree_Generator(exp)
         tree = generator.generate()
     return tree
 
